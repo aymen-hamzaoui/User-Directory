@@ -1,0 +1,767 @@
+{
+	"info": {
+		"_postman_id": "be9267b6-1633-4310-92b1-124188fe1176",
+		"name": "User Directory Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PostUser",
+			"item": [
+				{
+					"name": "User Added",
+					"item": [
+						{
+							"name": "Required/Optional Fields",
+							"item": [
+								{
+									"name": "User added - Valid All Fileds",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"imaginedragons\",\r\n    \"gender\": \"M\",\r\n    \"birthDate\": \"1973-10-04\",\r\n    \"country\": \"FRA\",\r\n    \"phone\": \"0365428459\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "User added - Valid Required Fileds Only Copy",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"rihanna\",\r\n    \"birthDate\": \"2000-04-23\",\r\n    \"country\": \"FRA\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Username Constraint",
+							"item": [
+								{
+									"name": "User added - Username Constraint -  Not Trimmed",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"    redHotChilliPeppers        \",\r\n    \"birthDate\": \"2000-04-24\",\r\n    \"country\": \"FRA\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Country Constraints",
+							"item": [
+								{
+									"name": "User added - Country Constraints - Not Trimmed",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"selena Gomez\",\r\n    \"birthDate\": \"2000-04-23\",\r\n    \"country\": \"                FRA        \"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "User added - Country Constraints - Using LowerCase Country Name",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"El Grande Toto\",\r\n    \"birthDate\": \"2000-04-23\",\r\n    \"country\": \"france\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "User added - Country Constraints - Using UpperCase Country Name",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"Statia\",\r\n    \"birthDate\": \"2000-04-23\",\r\n    \"country\": \"FRANCE\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "User added - Country Constraints - Using  StudlyCaps Country Name",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"avicii\",\r\n    \"birthDate\": \"2000-04-23\",\r\n    \"country\": \"FrANce\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "User added - Country Constraints - Using  LowerCase Alpha-2 code",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"El Benj\",\r\n    \"birthDate\": \"2000-04-23\",\r\n    \"country\": \"fr\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "User added - Country Constraints - Using  UpperCase Alpha-2 code",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"dizzy dros\",\r\n    \"birthDate\": \"2000-04-23\",\r\n    \"country\": \"FR\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "User added - Country Constraints - Using  StudlyCaps Alpha-2 code",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"Mister You\",\r\n    \"birthDate\": \"2000-04-23\",\r\n    \"country\": \"Fr\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "User added - Country Constraints - Using  LowerCase Alpha-3 code",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"Beyoncé\",\r\n    \"birthDate\": \"2000-04-23\",\r\n    \"country\": \"fra\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "User added - Country Constraints - Using  UpperCase Alpha-3 code",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"LeagueOfLegends\",\r\n    \"birthDate\": \"2000-04-23\",\r\n    \"country\": \"FRA\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "User added - Country Constraints - Using  StudlyCaps Alpha-3 code",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"Celine Dion\",\r\n    \"birthDate\": \"2000-04-23\",\r\n    \"country\": \"FrA\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "User Not Added",
+					"item": [
+						{
+							"name": "Username Constraint",
+							"item": [
+								{
+									"name": "User Not added - Invalid Username Length",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"A1B2C\",\r\n    \"gender\": \"M\",\r\n    \"birthDate\": \"1973-10-04\",\r\n    \"country\": \"FRA\",\r\n    \"phone\": \"0365428459\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Gender Constraint",
+							"item": [
+								{
+									"name": "User Not added - Invalid Gender Enum",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"A1B2C3\",\r\n    \"gender\": \"femmer\",\r\n    \"birthDate\": \"1973-10-04\",\r\n    \"country\": \"FRA\",\r\n    \"phone\": \"0365428459\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "BirhtDate Constraints",
+							"item": [
+								{
+									"name": "User Not added - Invalid BirthDate Format",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"A1B2C3\",\r\n    \"gender\": \"F\",\r\n    \"birthDate\": \"31/12/1998\",\r\n    \"country\": \"FRA\",\r\n    \"phone\": \"0365428459\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "User Not added - Invalid BirthDate In The Future",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"A1B2C3\",\r\n    \"gender\": \"F\",\r\n    \"birthDate\": \"2063-10-04\",\r\n    \"country\": \"FRA\",\r\n    \"phone\": \"0365428459\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Country Constraints",
+							"item": [
+								{
+									"name": "User Not added - Invalid Country Name",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"A1B2C3\",\r\n    \"gender\": \"F\",\r\n    \"birthDate\": \"2000-10-04\",\r\n    \"country\": \"AinChock\",\r\n    \"phone\": \"0365428459\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "User Not added - Invalid Country Alpha-2 code",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"A1B2C3\",\r\n    \"gender\": \"F\",\r\n    \"birthDate\": \"2000-10-04\",\r\n    \"country\": \"bp\",\r\n    \"phone\": \"0365428459\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "User Not added - Invalid Country Alpha-3 code",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"A1B2C3\",\r\n    \"gender\": \"F\",\r\n    \"birthDate\": \"2000-10-04\",\r\n    \"country\": \"BPI\",\r\n    \"phone\": \"0365428459\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Phone Constraints",
+							"item": [
+								{
+									"name": "User Not added - Invalid Phone Lenght",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"A1B2C3\",\r\n    \"gender\": \"F\",\r\n    \"birthDate\": \"2000-10-04\",\r\n    \"country\": \"FRA\",\r\n    \"phone\": \"065428454\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "User Not added - Invalid Phone AlphaNumeric",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"A1B2C3\",\r\n    \"gender\": \"F\",\r\n    \"birthDate\": \"2000-10-04\",\r\n    \"country\": \"FRA\",\r\n    \"phone\": \"0e6t42r45!\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Functional Constraints",
+							"item": [
+								{
+									"name": "User Not added - User Not Adult",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"A1B2C3\",\r\n    \"gender\": \"M\",\r\n    \"birthDate\": \"2009-10-04\",\r\n    \"country\": \"FRA\",\r\n    \"phone\": \"0365428459\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "User Not added - User Not Frensh Resident",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"A1B2C3\",\r\n    \"gender\": \"M\",\r\n    \"birthDate\": \"2000-10-04\",\r\n    \"country\": \"MAR\",\r\n    \"phone\": \"0365428459\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "GetUser",
+			"item": [
+				{
+					"name": "User Found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{context.path}}/api/users/aymenhamzaoui",
+							"host": [
+								"{{context.path}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"aymenhamzaoui"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Not Found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{context.path}}/api/users/philcollins",
+							"host": [
+								"{{context.path}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"philcollins"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
