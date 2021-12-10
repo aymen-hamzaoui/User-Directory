@@ -42,6 +42,8 @@ And that's it, your database is ready.
 
 ## API Documentation
 
+FOR MORE DETAILS YOU CAN VISIT THE LINK: `/swagger-ui.html`
+
 ### Find User By Username
 
 Returns json data about the username.
@@ -130,10 +132,20 @@ None
       **Possible Content 7:** `{ "status" : 400, "message" : "The user you're trying to add is not a French resident. We cannot proceed with this operation.", "timeStamp" : 1639128555235 }`
       
     * **Code:** 409 CONFLICT <br />
-      **Content:** `{ "status" : 409, "message" : "Username - aymenhamzaoui - already exists!", "timeStamp" : 1639128655473 }`     
+      **Content:** `{ "status" : 409, "message" : "Username - aymenhamzaoui - already exists!", "timeStamp" : 1639128655473 }`  
+      
+FOR MORE DETAILS YOU CAN VISIT THE LINK: `/swagger-ui.html`
 
 
+## Postman Collection
 
+Import the json file of the postman collection, you can find this file in the root directory -> Postman Collection
+
+<img width="307" alt="image" src="https://user-images.githubusercontent.com/60506191/145552726-21758b9f-94e3-432b-ad25-504845f8b7bf.png">
+
+<img width="701" alt="image" src="https://user-images.githubusercontent.com/60506191/145552497-b2086d4c-5658-4d1d-b488-35686a0b596b.png">
+
+<img width="315" alt="image" src="https://user-images.githubusercontent.com/60506191/145552569-8dfcebfc-8dce-46b3-b15d-2c1242841c1a.png">
 
 
 
