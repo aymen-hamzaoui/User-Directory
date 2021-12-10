@@ -706,6 +706,33 @@
 										}
 									},
 									"response": []
+								},
+								{
+									"name": "User Not added - User Already Exists",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"aymenhamzaoui\",\r\n    \"gender\": \"M\",\r\n    \"birthDate\": \"2000-10-04\",\r\n    \"country\": \"FRA\",\r\n    \"phone\": \"0365428459\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{context.path}}/api/users",
+											"host": [
+												"{{context.path}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
 								}
 							]
 						}
