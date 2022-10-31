@@ -1,7 +1,7 @@
 {
   "availability": [
     {
-      "date": "2022-11-05",
+      "date": "2022-11-03",
       "sessions": [
         {
           "session": "08:30:00",
@@ -12,8 +12,8 @@
         },
         {
           "session": "09:00:00",
-          "consumed": 30,
-          "available": 0,
+          "consumed": 25,
+          "available": 5,
           "max_quantity": 30,
           "highlighted": false
         },
